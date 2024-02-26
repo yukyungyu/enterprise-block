@@ -1,0 +1,101 @@
+@import 'font.css';
+@import 'reset.css';
+@import 'common.css';
+
+body {
+  background-color: #fff;
+  transition: background-color 0.5s;
+}
+body.dark {
+  background-color: #000;
+  color: #fff;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  z-index: 100;
+  transform: translateY(-100%);
+  transition: transform .3s,color .5s;
+  
+  margin: 0 auto;
+  padding: 0 100px;
+}
+header.on { /* 질문! */
+  transform: translateY(0%);
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  transition: color .5s;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-inner .logo {
+  width: 100px;
+}
+.header-inner .logo a {
+  display: inline-block;
+  padding: 17px 0;
+}
+.header-inner .logo a img {
+  width: 100%;
+  filter: brightness(0) invert(1);
+  transition: filter .5s;
+}
+.gnb ul {
+  display: flex;
+}
+.gnb ul li {}
+.gnb ul li a {
+  display: inline-block;
+  padding: 23px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+.gnb .lang-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 19px 0 19px 25px;
+}
+.gnb .lang-title span {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+
+.footer {
+  background: #000;
+  position: relative;
+  color: #fff;
+  padding: 0 100px;
+}
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 58px 0;
+}
+.footer-wrap .group-info .address {
+  font-weight: 400;
+  line-height: 1.36;
+}
+.footer-wrap .group-info .copyright {
+  margin-top: 10px;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.footer-wrap .footer-logo img {
+  width: 193px;
+  display: block;
+}

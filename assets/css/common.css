@@ -1,0 +1,59 @@
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+.skip-nav {
+  position: absolute;
+  top: 0;
+  line-height: normal;
+}
+.skip-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 40px;
+  transform: translateY(-100%);
+  background: #000;
+  color: #fff;
+}
+.skip-nav a:focus,
+.skip-nav a:active {
+  transform: translateY(0);
+}
+
+.bg-black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+/* .sc-intro .sticky::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  opacity: var(--opacity);
+  content: '';
+} */
+
+.text-gradient {
+  background: linear-gradient(90deg,#43cf2e,#0049ff,#e657af);
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text;
+  background-clip: text;
+}
