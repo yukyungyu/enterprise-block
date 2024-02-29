@@ -195,7 +195,7 @@ newTl3 = gsap.timeline({
     start: "0% 0%",
     end: "100% 100%",
     scrub: 1,
-    markers: true,
+    // markers: true,
     invalidateOnRefresh: true,
     onEnter:function(){
       gsap.set('.sc-service .content2',{autoAlpha:0})
@@ -250,7 +250,7 @@ tl123 = gsap.timeline({
     trigger: '.sc-asset',
     start: "0% 0%",
     end: "100% 100%",
-    markers:true,
+    // markers:true,
     scrub: true,
     toggleClass: {targets:".sc-asset .scroll-right",className:"on"},
     onUpdate:function(self){
@@ -293,30 +293,20 @@ ScrollTrigger.create({
 
 
 /* marquee */
-// marquee =  gsap.to('.marquee ul', {
-//   xPercent: 100,
-//   repeat: -1,
-//   ease: "none",
-//   paused: true,
-// })
-
-/* 
-const mTl = gsap.timeline();
 ScrollTrigger.create({
-  trigger: '.sc-ground',
-  start: "0% 0%",
+  trigger: ".footer",
+  start: "0% 100%",
   end: "100% 100%",
-  onEnter: function(){
-    // marquee.play();
+  scrub: true,
+  markers: false,
+  onEnter:function(){
+    $('.marquee').addClass('on');
   },
-  onLeaveBack: function(){
-    // marquee.pause();
+  onLeaveBack:function(){
+    $('.marquee').removeClass('on');
   }
-})
-mTl
-.to('.marquee', 1, {yPercent: -100,})
-.to('.marquee ul', {xPercent: 100, repeat: -1, ease: "none", paused: false})
-*/
+});
+
 
 // 다크모드
 ScrollTrigger.create({

@@ -1252,49 +1252,63 @@
   color: #000;
 }
 
-.marquee {
-  transform: translateY(100%);
-  overflow: hidden;
+.marquee{
   display: flex;
-  justify-content: flex-end;
-  position: relative;
+  transform: translateY(100%);
+  transition: transform .6s ease-in-out;
+  transition-delay: .4s;
 }
-.marquee:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 110%;
-  /* top: 0; */
-  bottom: 0;
-  left: 0;
-  backdrop-filter: blur(36px);
+.marquee.on {
+  transform: translateY(0);
 }
 .marquee ul {
   display: flex;
-}
-.marquee li {
   position: relative;
-  display: block;
-  color: #fff;
-  font-weight: 700;
-  padding: 10px 72px;
   white-space: nowrap;
-  z-index: 2;
+  animation: banner 10s linear infinite;
+  margin-left: -705.93px;
+}
+.marquee ul::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(36px);
+  z-index: 1;
+} 
+.marquee ul li {
+  position: relative;
+  padding: 10px 72px;
+  color: #fff;
   font-size: 24px;
   line-height: 1.67;
+  font-weight: 700;
+  text-align: center;
 }
-.marquee li:nth-child(3n) {
+.marquee ul li:nth-child(3n) {
   background-color: #e657af;
 }
-.marquee li:nth-child(3n-1) {
+.marquee ul li:nth-child(3n-1) {
   background-color: #0049ff;
 }
-.marquee li:nth-child(3n-2) {
+.marquee ul li:nth-child(3n-2) {
   background-color: #00bf41;
 }
-.marquee li b {
-  text-transform: uppercase;
-}
-.marquee li em {
+.marquee ul em {
   font-style: italic;
+}
+.marquee .text {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(700px);
+  }
 }
