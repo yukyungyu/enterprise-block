@@ -116,7 +116,7 @@ const t4 = gsap.timeline({
     trigger: ".group-feature",
     scrub: 0,
     start: "0% 95%",
-    end: "100% 80%", /* 시점 맞추기 어렵다 */
+    end: "100% 80%",
     // markers: true,
   }
 });
@@ -164,9 +164,9 @@ newTl1
 .to('.sc-service .content1 .card-item:nth-child(4)',{xPercent:-300, x: -40*3}, 'a')
 .to('.sc-service .content1 .card-item:nth-child(4) .card-unlock',{autoAlpha:0}, 'a')
 .to('.sc-service .content1 .card-item:nth-child(4) .card-lock',{autoAlpha:1})
+.to('.sc-service .content1 .card-item:nth-child(4) .card-lock',{autoAlpha:0})
 
 
-gsap.set('.sc-service .content2',{autoAlpha:0})
 newTl2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-service .content2",
@@ -176,12 +176,12 @@ newTl2 = gsap.timeline({
     // markers: true,
     invalidateOnRefresh: true, //변수값을 새로고침
     onEnter:function(){
-      gsap.set('.sc-service .content1',{autoAlpha:0})
-      gsap.set('.sc-service .content2',{autoAlpha:1})
+      $('.sc-service .content1').addClass('hide');
+      $('.sc-service .content2').removeClass('hide');
     },
     onLeaveBack:function(){
-      gsap.set('.sc-service .content1',{autoAlpha:1})
-      gsap.set('.sc-service .content2',{autoAlpha:0})
+      $('.sc-service .content1').removeClass('hide');
+      $('.sc-service .content2').addClass('hide');
     }
   }
 })
@@ -198,24 +198,30 @@ newTl3 = gsap.timeline({
     // markers: true,
     invalidateOnRefresh: true,
     onEnter:function(){
-      gsap.set('.sc-service .content2',{autoAlpha:0})
-      gsap.set('.sc-service .content3',{autoAlpha:1})
+      console.log('content3');
+      $('.sc-service .content3 .card-item:first-child .card-box').removeClass('hide');
+      $('.sc-service .content2').addClass('hide');
+      // $('.sc-service .content3 .card-item.first .card-box').css('opacity','1');
+      // $('.sc-service .content2 .card-box').css('opacity','0');
     },
     onLeaveBack:function(){
-      gsap.set('.sc-service .content2',{autoAlpha:1})
-      gsap.set('.sc-service .content3',{autoAlpha:0})
+      // $('.sc-service .content3 .card-item.first .card-box').css('opacity','0');
+      // $('.sc-service .content2 .card-box').css('opacity','1');
+      $('.sc-service .content3 .card-item:first-child .card-box').addClass('hide');
+      $('.sc-service .content2').removeClass('hide');
     }
   }
 })
 newTl3
-.to('.sc-service .content2 .sticky .card-box', {autoAlpha: 0})
-.to('.sc-service .content3 .card-item.first .card-box', {autoAlpha: 1})
-.to('.sc-service .content3 .card-item:nth-child(2)', {xPercent: -100, x: -40, delay: 2}, 'b')
-.to('.sc-service .content3 .card-item:nth-child(3)', {xPercent: -200, x: -40*2, delay: 2}, 'b')
-.to('.sc-service .content3 .card-item:nth-child(4)', {xPercent: -300, x: -40*3, delay: 2}, 'b')
-.to(".sc-service .content3 .sticky-title", {xPercent: -300, delay: 2, }, 'b')
-.to(".sc-service .content3 .sticky-title", {autoAlpha: 1, duration: 3}, 'c')
-.to(".sc-service .content3 .card-item.first:before", {autoAlpha: 1}, 'c')
+// .to('.sc-service .content3 .card-item.first .card-box', {'autoAlpha': 1}, 'c')
+// .to('.sc-service .content2 .card-box', {autoAlpha: 0},'c')
+.to('.sc-service .content3 .card-item:nth-child(2)', {xPercent: -100, x: -40, delay: 2}, 'c')
+.to('.sc-service .content3 .card-item:nth-child(3)', {xPercent: -200, x: -40*2, delay: 2}, 'c')
+.to('.sc-service .content3 .card-item:nth-child(4)', {xPercent: -300, x: -40*3, delay: 2}, 'c')
+
+.to(".sc-service .content3 .sticky-title", {xPercent: -300, delay: 2, })
+.to(".sc-service .content3 .sticky-title", {autoAlpha: 1, duration: 3}, 'd')
+.to(".sc-service .content3 .card-item.first .blur", {autoAlpha: 1}, 'd')
 
 
 
@@ -269,12 +275,6 @@ tl123.to('.sc-asset .asset-wrap',{
   ease:"none"
 })
 
-
-
-/* 
-  sc-service
-  가로 스크롤
-*/
 
 /* sc-creator */
 const t6 = gsap.timeline();

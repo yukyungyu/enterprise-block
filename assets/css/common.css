@@ -40,20 +40,13 @@
   transition: opacity .5s;
 }
 
-/* .sc-intro .sticky::before{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  background: rgba(0,0,0,.5);
-  opacity: var(--opacity);
-  content: '';
-} */
-
 .text-gradient {
   background: linear-gradient(90deg,#43cf2e,#0049ff,#e657af);
   -webkit-text-fill-color: transparent; 
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.hide {
+  opacity: 0 !important;
 }

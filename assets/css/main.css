@@ -498,13 +498,12 @@
 
 
 /* sc-service */
-.sc-service {
-}
+.sc-service {}
 
 /* content1 */
 .sc-service .content1 {
   position: relative;
-  height: 600vh;
+  height: 450vh;
 }
 .sc-service .content1 .sticky-wrapper {
   height: 700vh;
@@ -577,7 +576,6 @@
 }
 .sc-service .content1 .card-box .card-img {
   position: relative;
-  /* opacity: 0; */
   transition: opacity .5s;
   
   padding: 56px 50px 0 0;
@@ -607,7 +605,7 @@
   background-color: #000;
   border: 2px solid transparent;
   padding: 0;
-  background-image: linear-gradient(#000,#000),linear-gradient(315deg,#e657af,#0049ff,#43cf2e);
+  background-image: linear-gradient(#000,#000),linear-gradient(300deg,#e657af,#0049ff,#43cf2e);
   background-origin: border-box;
   background-clip: content-box,border-box;
 }
@@ -628,6 +626,7 @@
 .sc-service .content2 {
   display: flex;
   padding: 0 100px;
+  margin-top: -100vh;
 }
 .sc-service .content2 .sticky {
   position: sticky;
@@ -635,12 +634,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0;left: 0;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 400px;
-  /* border: 1px solid #fff; */
 }
-.sc-service .content2 .sticky .card-box {
+.sc-service .content2 .card-box {
   position: relative;
   width: 400px;
   height: 540px;
@@ -650,7 +649,7 @@
   background-origin: border-box;
   background-clip: content-box,border-box;
 }
-.sc-service .content2 .sticky .card-box .card-text {
+.sc-service .content2 .card-box .card-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -664,15 +663,9 @@
   visibility: hidden;
 }
 .sc-service .content2 .group-desc {
-  padding: 100vh 0 100vh 350px;
-  /* background: #ccc; */
-  height: 200vh;
+  padding: 100vh 0 100vh 13.5417vw;
   box-sizing: content-box;
   flex: 1;
-}
-.sc-service .content2 .group-desc .wrap {
-  /* background: #888; */
-  height: 100%;
 }
 .sc-service .content2 .group-desc h3 {
   font-size: 72px;
@@ -680,7 +673,7 @@
   line-height: 1.28;
   color: #fff;
 }
-.sc-service .content2 .group-desc .wrap > p {
+.sc-service .content2 .group-desc p {
   max-width: 750px;
   margin-top: 34px;
   font-size: 24px;
@@ -752,24 +745,16 @@
 /* content3 */
 .sc-service .content3 {
   position: relative;
-  height: 400vh;
+  height: 300vh;
   padding: 0 100px;
+  margin-top: -100vh;
 }
 .sc-service .content3 .sticky {
   position: sticky;
   top: 0;
   height: 100vh;
-  /* border: 10px solid #f00; */
-  margin-top: -100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-.sc-service .content3 .sticky .wrap {
-  /* border: 1px solid #fff; */
-  width: 100%;
-  position: relative;
-  display: flex;
 }
 .sc-service .content3 .group-card {
   display: flex;
@@ -794,10 +779,10 @@
   height: 540px;
   flex-shrink: 0;
 }
-.sc-service .content3 .card-item:nth-child(1) {z-index:0}
-.sc-service .content3 .card-item:nth-child(2) {z-index:-1}
-.sc-service .content3 .card-item:nth-child(3) {z-index:-2}
-.sc-service .content3 .card-item:nth-child(4) {z-index:-3}
+.sc-service .content3 .card-item:nth-child(1) {z-index:3}
+.sc-service .content3 .card-item:nth-child(2) {z-index:2}
+.sc-service .content3 .card-item:nth-child(3) {z-index:1}
+.sc-service .content3 .card-item:nth-child(4) {z-index:0}
 .sc-service .content3 .card-box {
   position: absolute;
   display: flex;
@@ -816,18 +801,18 @@
   background-origin: border-box;
   background-clip: content-box, border-box;
   padding: 0;
-  opacity: 0;
-  visibility: hidden;
 }
-.sc-service .content3 .card-item.first:before {
-  content: '';
+.blur {
+  position: absolute;
   width: 160%;
   height: 160%;
   left: -30%;
   top: -30%;
-  position: absolute;
-  background: url(/assets/images/service/card-glow.png) no-repeat center / cover;
+  filter: blur(70px);
+  background-image: url(/assets/images/service/card-glow.png);
+  background-size: cover;
   opacity: 0;
+  z-index: -1;
 }
 .sc-service .content3 .card-box .card-title {
   position: relative;
