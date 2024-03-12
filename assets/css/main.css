@@ -31,6 +31,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow: hidden;
 }
 .sc-intro .sticky::before {
   position: absolute;
@@ -105,6 +106,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow: hidden;
 }
 .sc-showcase .sticky::before{
   position: absolute;
@@ -199,14 +201,14 @@
   margin-left: auto;
 }
 
-.sc-prove.prove-challenge {
+.prove-challenge {
   position: relative;
   padding: 218px 0 226px;
   background: url(../images/prove-challenge/prove.jpg) no-repeat 50%;
   background-size: cover;
   overflow: hidden;
 }
-.sc-prove .prove-title {
+.prove .prove-title {
   margin: 0 auto;
   font-size: 72px;
   line-height: 1.28;
@@ -214,26 +216,26 @@
   color: #fff;
   text-align: center;
 }
-.sc-prove .prove-title span {
+.prove .prove-title span {
   display: inline-block;
 }
-.sc-prove .group-box {
+.prove .group-box {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.sc-prove .white-box {
+.prove .white-box {
   position: absolute;
   background-color: #fff;
   height: 140px;
   width: 23%;
 }
-.sc-prove .white-box.left {
+.prove .white-box.left {
   bottom: 0;
   left: 0;
   transform: translateX(-100%);
 }
-.sc-prove .white-box.right {
+.prove .white-box.right {
   top: 0;
   right: 0;
   transform: translateX(100%);
@@ -303,7 +305,6 @@
   top: 0;
   height: 100vh;
   overflow: hidden;
-  /* padding: 0 100px; */
 }
 .sc-possiblity .horizontal{
   display: flex;
@@ -638,6 +639,7 @@
   left: 0;
   height: 100vh;
   width: 400px;
+  overflow: hidden;
 }
 .sc-service .content2 .card-box {
   position: relative;
@@ -755,6 +757,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .sc-service .content3 .group-card {
   display: flex;
@@ -905,8 +908,8 @@
 
 
 
-/* sc-prove */
-.sc-prove.prove-asset {
+/* prove-asset */
+.prove-asset {
   position: relative;
   padding: 218px 0 226px;
   background: url(../images/prove-asset/prove.jpg) no-repeat 50%;
@@ -916,7 +919,7 @@
 
 /* sc-asset */
 .sc-asset {
-  height: 500vh;
+  height: 300vh;
 }
 .sc-asset .sticky{
   position: sticky;
@@ -1136,7 +1139,7 @@
 /* sc-creator */
 .sc-creator {
   position: relative;
-  height: 400vh;
+  height: 600vh;
 }
 .sc-creator .sticky {
   height: 100vh;
@@ -1172,7 +1175,7 @@
   opacity: 0;
   transition: opacity 0.5s;
 }
-.sc-creator .group-text .title-area p {
+.sc-creator .group-text .title-area .intro-text {
   font-size: 60px;
   line-height: 1.2;
   font-weight: 600;
@@ -1242,6 +1245,7 @@
   transform: translateY(100%);
   transition: transform .6s ease-in-out;
   transition-delay: .4s;
+  overflow: hidden;
 }
 .marquee.on {
   transform: translateY(0);

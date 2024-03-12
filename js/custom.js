@@ -18,7 +18,6 @@ ScrollTrigger.create({
   trigger:".sc-intro .sticky",
   start:"85% 0",
   end:"",
-  // markers:true,
   onEnter:function(){
     $('header').addClass('on');
   },
@@ -28,10 +27,7 @@ ScrollTrigger.create({
 })
 
 
-/* 
-  sc-intro
-  1. 배경 고정 2. 배경 딤드 3. 텍스트 페이드인아웃
-*/
+/* sc-intro */
 const t1 = gsap.timeline();
 
 t1
@@ -51,13 +47,9 @@ ScrollTrigger.create({
   start: "0% 0%",
   end: "100% 100%",
   scrub: 1,
-  // markers: true,
 })
 
-/* 
-  sc-showcase
-  1. 배경 고정 2. 배경 딤드 3. 텍스트 페이드인아웃
-*/
+/* sc-showcase */
 const t2 = gsap.timeline({
   defaults:{
     ease:"none"
@@ -88,10 +80,7 @@ ScrollTrigger.create({
 })
 
 
-/* 
-  sc-possiblity
-  양쪽 분리
-*/
+/* sc-possiblity */
 gsap.to('.sc-possiblity .horizontal', {
   x:function(){
     return -($('.sc-possiblity .list').outerWidth());
@@ -106,18 +95,12 @@ gsap.to('.sc-possiblity .horizontal', {
   }
 });
 
-/* 
-  group-feature
-  양옆에서 막대 등장 - 그라데이션
-  텍스트 페이드인
-*/
 const t4 = gsap.timeline({
   scrollTrigger: {
     trigger: ".group-feature",
     scrub: 0,
     start: "0% 95%",
     end: "100% 80%",
-    // markers: true,
   }
 });
 t4.from(".feature:nth-child(1)", {xPercent: -50}, 'a')
@@ -130,7 +113,6 @@ const t4_1 = gsap.timeline({
     scrub: 0,
     start: "0% 40%",
     end: "100% 40%",
-    // markers: true,
     onEnter:function(){
       $('.group-feature').addClass('on')
     },
@@ -149,8 +131,7 @@ newTl1 = gsap.timeline({
     start: "0% 0%",
     end: "100% 100%",
     scrub: 0,
-    // markers: true,
-    invalidateOnRefresh: true, //변수값을 새로고침
+    invalidateOnRefresh: true,
   }
 })
 newTl1
@@ -173,8 +154,7 @@ newTl2 = gsap.timeline({
     start: "0% 0%",
     end: "100% 100%",
     scrub:0,
-    // markers: true,
-    invalidateOnRefresh: true, //변수값을 새로고침
+    invalidateOnRefresh: true,
     onEnter:function(){
       $('.sc-service .content1').addClass('hide');
       $('.sc-service .content2').removeClass('hide');
@@ -195,26 +175,19 @@ newTl3 = gsap.timeline({
     start: "0% 0%",
     end: "100% 100%",
     scrub: 1,
-    // markers: true,
     invalidateOnRefresh: true,
     onEnter:function(){
       console.log('content3');
       $('.sc-service .content3 .card-item:first-child .card-box').removeClass('hide');
       $('.sc-service .content2').addClass('hide');
-      // $('.sc-service .content3 .card-item.first .card-box').css('opacity','1');
-      // $('.sc-service .content2 .card-box').css('opacity','0');
     },
     onLeaveBack:function(){
-      // $('.sc-service .content3 .card-item.first .card-box').css('opacity','0');
-      // $('.sc-service .content2 .card-box').css('opacity','1');
       $('.sc-service .content3 .card-item:first-child .card-box').addClass('hide');
       $('.sc-service .content2').removeClass('hide');
     }
   }
 })
 newTl3
-// .to('.sc-service .content3 .card-item.first .card-box', {'autoAlpha': 1}, 'c')
-// .to('.sc-service .content2 .card-box', {autoAlpha: 0},'c')
 .to('.sc-service .content3 .card-item:nth-child(2)', {xPercent: -100, x: -40, delay: 2}, 'c')
 .to('.sc-service .content3 .card-item:nth-child(3)', {xPercent: -200, x: -40*2, delay: 2}, 'c')
 .to('.sc-service .content3 .card-item:nth-child(4)', {xPercent: -300, x: -40*3, delay: 2}, 'c')
@@ -226,9 +199,9 @@ newTl3
 
 
 /* 
-  sc-prove
+  prove
 */
-$('.sc-prove').each(function(i,el){
+$('.prove').each(function(i,el){
   let leftVal = $(this).find('.prove-title:nth-child(1) > span').data('x');
   let rightVal = $(this).find('.prove-title:nth-child(3) > span').data('x');
   const t3 = gsap.timeline({
@@ -237,7 +210,6 @@ $('.sc-prove').each(function(i,el){
       scrub: true,
       start: "0% 80%",
       end: "100% 80%",
-      // markers:true,
     }
   });
     t3
@@ -281,7 +253,7 @@ const t6 = gsap.timeline();
 t6
 .to(".sc-creator .btn-scroll", {autoAlpha: 1})
 .to(".sc-creator .group-text", {autoAlpha: 1})
-.to(".sc-creator .group-text", {autoAlpha: 0, })
+.to(".sc-creator .group-text", {autoAlpha: 0})
 
 ScrollTrigger.create({
   animation: t6,
